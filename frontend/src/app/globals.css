@@ -1,0 +1,81 @@
+/* VocalVoice Global Styles */
+:root {
+  --color-bg-warm: #FFF8F5;
+  --color-bg-soft: #FDF0F0;
+  --color-primary: #D4726A;
+  --color-primary-light: #E8B4B0;
+  --color-text: #1A1A1A;
+  --color-text-muted: #5A4A4A;
+  --color-border: #E8D5D0;
+  --color-overlay: rgba(255, 248, 245, 0.92);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  color: var(--color-text);
+  background: var(--color-bg-warm);
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Minimum tap target */
+button,
+a,
+input,
+select,
+textarea {
+  min-height: 44px;
+}
+
+/* Button hover */
+button:not(:disabled):hover {
+  filter: brightness(0.92);
+}
+
+/* Screenreader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile breakpoint helpers */
+@media (max-width: 768px) {
+  .desktop-only { display: none !important; }
+}
+
+@media (min-width: 769px) {
+  .mobile-only { display: none !important; }
+}
